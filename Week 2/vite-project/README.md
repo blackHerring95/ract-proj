@@ -1,4 +1,4 @@
-##Week one of learning react##
+## Week two of learning react ##
 
 # React + TypeScript + Vite
 
