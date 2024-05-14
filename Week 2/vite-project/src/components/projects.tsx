@@ -4,9 +4,14 @@ const ProjectsList = () => {
      
     return <div>
         {
-            projects.map((proj, index) => {
-                return (<div>{proj.id}. {proj.name}</div>)
-            })
+            <div>
+                {
+                    projects.map((proj, index) => {
+                        return (
+                            <div className="pt-2" key={`${proj.id}_${proj.name}`}>{proj.id}. {proj.name}</div>
+                    )
+                })}
+            </div>
         }
     </div>
 };
