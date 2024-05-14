@@ -1,9 +1,8 @@
-import { useState } from 'react'
 import './App.css'
 import Header2 from './components/header2'
 import About from './components/about'
 import Footer from './components/footer'
-import ProjectsList from './components/projects'
+import ProjectList from './components/project-list'
 
 
 function App() {
@@ -12,7 +11,7 @@ function App() {
     <>
       <Header2 name='Damir D.' tagline='Solutions that speak for themselves.'></Header2>
       <About bio='Software developer. Likes to code.'></About>
-      <ProjectsList></ProjectsList>
+      <ProjectList></ProjectList>
       <Footer phoneNumber='+38761123123' email='test@test.com'></Footer>
     </>
   )
