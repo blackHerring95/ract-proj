@@ -1,0 +1,14 @@
+#build the docker image
+docker build -t restapiimage:v1 -f Dockerfile .
+
+##can be run like this
+docker build -t rest-api-image .
+
+#run a container
+#you need and env varable -e DOTNET_URLS=http://+:80 
+#not sure if its because of the aspnet:8.0.3-nanoserver-ltsc2022 base image
+#
+docker run -p 8000:80 -e DOTNET_URLS=http://+:80 --name restApi -d restapiimage:v1
+
+-d run in the background
+-p link ports

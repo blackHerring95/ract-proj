@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "YdrLift2xR0fLRKksm0q/FykxXmkvg0kFuXt0J4z9BnGop1hNQkKh+BslI2XJSwmKR8Q3GBi1RXN0Zl/AzCruw==",
+  "success": true,
+  "projectFilePath": "C:\\MY FOLDER\\React training\\React proj\\restAPI\\restAPI\\restAPI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\damir.dupanovic\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\damir.dupanovic\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
+    "C:\\Users\\damir.dupanovic\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512",
+    "C:\\Users\\damir.dupanovic\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\damir.dupanovic\\.nuget\\packages\\swashbuckle.aspnetcore\\6.6.1\\swashbuckle.aspnetcore.6.6.1.nupkg.sha512",
+    "C:\\Users\\damir.dupanovic\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.6.1\\swashbuckle.aspnetcore.swagger.6.6.1.nupkg.sha512",
+    "C:\\Users\\damir.dupanovic\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.6.1\\swashbuckle.aspnetcore.swaggergen.6.6.1.nupkg.sha512",
+    "C:\\Users\\damir.dupanovic\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.6.1\\swashbuckle.aspnetcore.swaggerui.6.6.1.nupkg.sha512"
+  ],
+  "logs": []
+}
