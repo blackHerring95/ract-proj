@@ -36,6 +36,7 @@ const ProjectList = () => {
     return <div>
         <Input placeholder='Search...' onUpdate={(value)=>setFilter(value)}></Input>
         {
+            //conditional rendering 
             loading ? (
                 <div>Loading...</div>
             ) : (

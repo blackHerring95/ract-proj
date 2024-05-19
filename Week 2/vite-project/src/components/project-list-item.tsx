@@ -1,4 +1,5 @@
 //to import model...
+import { Link } from "react-router-dom";
 import {Project} from "../models/project.model"
 
 //create your own interface for receiving parameters
@@ -12,8 +13,10 @@ const ProjectListItem = ({project, index}: ProjectListItemProps) => {
      
     return <div>
         {
-            <div className="pt-2">
-                {index}. {project.name}
+            <div>
+                <Link className="pt-2" to={`projects/${project.id}`}>
+                    {index}. {project.name}
+                </Link>
             </div>
         }
     </div>

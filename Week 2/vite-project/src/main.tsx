@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import App from './App';
+import ProjectList from './components/project-list';
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/projects",
-    element : <App></App>
+    element : <ProjectList></ProjectList>
   }
 ]);
 
