@@ -6,26 +6,32 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 // import App from './App';
 import ProjectList from './components/project-list';
 import ProjectDetails from './components/project-details';
+import Layout from './components/layout';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <div>Hello...</div>
-  },
-  {
-    path: "/projects",
-    element: <ProjectList></ProjectList>,
+    element: <Layout />,
     children: [
       {
-        //connection between this and project-details component
-        path: ":projectId",
-        element: <ProjectDetails />
+        path: "/",
+        element: <div>Hello...</div>
+      },
+      {
+        path: "/projects",
+        element: <ProjectList></ProjectList>,
+        children: [
+          {
+            //connection between this and project-details component
+            path: ":projectId",
+            element: <ProjectDetails />
+          }
+        ]
+      },
+      {
+        path: "/authenticate",
+        element: <div>Auth success!</div>
       }
     ]
-  },
-  {
-    path: "/authenticate",
-    element: <div>Auth success!</div>
   }
 ]);
 
