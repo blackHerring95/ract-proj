@@ -9,19 +9,23 @@ import ProjectDetails from './components/project-details';
 
 const router = createBrowserRouter([
   {
-    path:"/",
-    element : <div>Hello...</div>
+    path: "/",
+    element: <div>Hello...</div>
   },
   {
-    path:"/projects",
-    element : <ProjectList></ProjectList>,
+    path: "/projects",
+    element: <ProjectList></ProjectList>,
     children: [
       {
         //connection between this and project-details component
         path: ":projectId",
-        element:<ProjectDetails/>
+        element: <ProjectDetails />
       }
     ]
+  },
+  {
+    path: "/authenticate",
+    element: <div>Auth success!</div>
   }
 ]);
 
@@ -29,6 +33,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     {/* <App /> */}
     {/* add routing */}
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )

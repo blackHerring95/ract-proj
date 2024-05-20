@@ -2,7 +2,7 @@ import Input from "./input";
 import ProjectListItem from "./project-list-item";
 import { Project } from '../models/project.model';
 import { useState, useEffect } from 'react';
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate, useSearchParams } from "react-router-dom";
 
 
 const ProjectList = () => {
@@ -10,6 +10,13 @@ const ProjectList = () => {
     const [filter, setFilter] = useState<string>("");
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
+
+    //use this to update filer in url
+    const [searchParams, setSearchparams] = useSearchParams();
+
+    //use this to navigate to other route...
+    const navigate = useNavigate();
+
     // useEffect(() =>{
     //     fetch("http://localhost:3000/projects")
     //         .then((res) => res.json())
@@ -27,6 +34,8 @@ const ProjectList = () => {
     //this can be handled by a library or cancelation tokens
     //it can be done with falg, and use conditional loading 
     useEffect(() => {
+        //update filter in url...
+        setSearchparams({ filter: filter });
         setLoading(true);
         fetch(`http://localhost:3000/projects?name_like=${filter}`)
             .then((res) => res.json())
@@ -53,6 +62,8 @@ const ProjectList = () => {
             </div>
             <div>
                 <Outlet />
+                {/* //example navigate to route */}
+                <button onClick={() => navigate("/authenticate")}>Click</button>
             </div>
         </div>
     )
