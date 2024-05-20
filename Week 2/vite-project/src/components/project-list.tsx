@@ -1,7 +1,8 @@
 import Input from "./input";
 import ProjectListItem from "./project-list-item";
 import { Project } from '../models/project.model';
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
+import { Outlet } from "react-router-dom";
 
 
 const ProjectList = () => {
@@ -25,29 +26,36 @@ const ProjectList = () => {
     //if you send multiple requests at the same time previous ones will not be cancled
     //this can be handled by a library or cancelation tokens
     //it can be done with falg, and use conditional loading 
-    useEffect(() =>{
+    useEffect(() => {
         setLoading(true);
         fetch(`http://localhost:3000/projects?name_like=${filter}`)
             .then((res) => res.json())
             .then((data) => setProjects(data))
             .finally(() => setLoading(false))
-    }, [filter]); 
+    }, [filter]);
 
-    return <div>
-        <Input placeholder='Search...' onUpdate={(value)=>setFilter(value)}></Input>
-        {
-            //conditional rendering 
-            loading ? (
-                <div>Loading...</div>
-            ) : (
-                <>
-                    {projects.map((proj, index) => (
-                        <ProjectListItem key={proj.id} index={index} project={proj}></ProjectListItem>
-                    ))}
-                </>
-            )
-        }
-    </div>
+    return (
+        <div className="flex flex-row">
+            <div>
+                <Input placeholder='Search...' onUpdate={(value) => setFilter(value)}></Input>
+                {
+                    //conditional rendering 
+                    loading ? (
+                        <div>Loading...</div>
+                    ) : (
+                        <>
+                            {projects.map((proj, index) => (
+                                <ProjectListItem key={proj.id} index={index} project={proj}></ProjectListItem>
+                            ))}
+                        </>
+                    )
+                }
+            </div>
+            <div>
+                <Outlet />
+            </div>
+        </div>
+    )
 };
 
 export default ProjectList;

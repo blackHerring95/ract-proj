@@ -5,6 +5,7 @@ import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 // import App from './App';
 import ProjectList from './components/project-list';
+import ProjectDetails from './components/project-details';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,14 @@ const router = createBrowserRouter([
   },
   {
     path:"/projects",
-    element : <ProjectList></ProjectList>
+    element : <ProjectList></ProjectList>,
+    children: [
+      {
+        //connection between this and project-details component
+        path: ":projectId",
+        element:<ProjectDetails/>
+      }
+    ]
   }
 ]);
 
