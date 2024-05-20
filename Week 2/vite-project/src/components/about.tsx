@@ -1,3 +1,5 @@
+
+
 export interface AboutProps {
     bio: string;
 }
